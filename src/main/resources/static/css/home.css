@@ -1,12 +1,14 @@
-
 /* 슬라이더 */
 .slider {
 	max-width:80%;
 	height:400px;
-	margin:20px auto;
+	margin:40px auto; /* 상하 여백 증가 */
 	overflow:hidden;
     position: relative;
     z-index: 1; /* 슬라이더는 nav 아래에 위치 */
+    background-color: #ffffff; /* 배경색 추가 */
+    border-radius: 15px; /* 모서리 둥글게 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
 }
 
 .slides{
@@ -59,7 +61,7 @@ button.next {
     color: white;
     text-align: center;
     padding: 70px 0;
-    margin-bottom: 40px;
+    margin: 40px 0; /* 상하 여백 추가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -90,83 +92,95 @@ main .cta-btn:hover {
 
 /* Featured Projects */
 .featured-projects {
-    padding: 50px 20px;
-    background-color: white;
+    padding: 70px 0;
+    margin: 40px 0; /* 상하 여백 추가 */
+    background-color: #EDF2F7;
 }
 
 .featured-projects h2 {
     text-align: center;
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 40px;
-}
-
-/* 특징 섹션 스타일 */
-.featured {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-    background: #f9f9f9;
-}
-
-/* 개별 특징 아이템 스타일 */
-.feature {
-    flex: 1 1 22%;
-    margin: 10px;
-    text-align: center;
-}
-
-/* 특징 이미지 스타일 */
-.feature img {
-    max-width: 100%;
-    height: auto;
+    font-weight: bold;
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0 50px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; /* 간격 증가 */
+    padding: 0 30px; /* 좌우 패딩 증가 */
+    max-width: 1400px; /* 최대 너비 증가 */
+    margin: 0 auto;
 }
 
 .project-card {
     background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px; /* 패딩 증가 */
+    text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* 높이를 100%로 설정 */
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .project-card h3 {
     color: var(--primary-color);
-    margin-bottom: 10px;
-    font-size : 1.4em;
+    margin-bottom: 15px;
+    font-size: 1.4em; /* 글자 크기 증가 */
+    font-weight: bold;
 }
 
 .project-card p {
     color: var(--text-color);
-    margin-bottom:20px;
+    margin-bottom: 20px;
+    font-size: 1em; /* 글자 크기 증가 */
+    line-height: 1.5;
+    flex-grow: 1; /* 내용이 카드의 남은 공간을 채우도록 설정 */
 }
 
-.project-card a {
+.project-card .btn {
     background-color: var(--accent-color);
-    text-decoration : none;
+    text-decoration: none;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 20px; /* 버튼 크기 증가 */
     border-radius: 25px;
+    font-size: 1em;
     transition: background-color 0.3s ease, transform 0.2s;
+    align-self: flex-start;
+    display: inline-block;
 }
 
-.project-card a:hover {
-    background-color: var(--button-hover);
+.project-card .btn:hover {
+    background-color: var(--secondary-color);
     transform: translateY(-3px);
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 1200px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 #chat-container {
@@ -177,7 +191,22 @@ main .cta-btn:hover {
     overflow: hidden;
 }
 
-/* 리뷰 슬라이드 */
+/*리뷰 슬라이드*/
+.slidereview {
+    text-align: center;
+    padding: 70px 0;
+    margin: 40px 0; /* 상하 여백 추가 */
+    background-color: #ffffff; /* 배경색 변경 */
+    border-radius: 15px; /* 모서리 둥글게 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+
+.slidereview h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
 .review-slider {
     display: flex;
     justify-content: center;
@@ -187,58 +216,46 @@ main .cta-btn:hover {
 
 .review-item {
     background-color: #ffffff;
-    border-radius: 15px;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 25px;
-    width: 500px; /* 카드의 고정 너비 */
-    height: 250px !important; /* 카드의 고정 높이 */
+    padding: 20px;
+    width: 300px; /* 고정된 슬라이드 카드 크기 */
+    height: 320px; /* 카드의 고정된 높이 */
+    flex-shrink: 0;
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* 위쪽부터 채우기 시작 */
+    justify-content: space-between;
     overflow: hidden;
     transition: transform 0.3s ease;
-    position: relative; /* 필요한 경우 카드 내에서 위치 고정 */
 }
 
-.slick-slide {
-    margin: 20px; /* 슬라이드 좌우에 간격 추가 */
+.review-item:hover {
+    transform: translateY(-10px);
 }
 
-.slick-dots {
-    display: none !important;
+.project-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #227B94; /* 메인 색상 */
+}
+
+.rating {
+    font-size: 1.1rem;
+    color: #ffb400;
+    margin-bottom: 15px;
 }
 
 .review-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #555;
-    margin-bottom: 15px;
-    flex-grow: 1; /* 텍스트 영역이 가변적으로 확장 */
+    margin-bottom: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 4; /* 최대 4줄까지만 표시 */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.rating-and-author {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.rating {
-    display: flex;
-    align-items: center;
-    font-size: 1.4rem;
-    color: #ffb400;
-}
-
-.author-id {
-    font-size: 1rem;
-    color: #777;
-    font-weight: bold;
 }
 
 .review-footer {
@@ -247,44 +264,13 @@ main .cta-btn:hover {
     align-items: center;
     font-size: 0.9rem;
     color: #777;
-    margin-top: auto; /* 상단에 여유 공간을 채우고 하단에 고정 */
-    padding-top: 10px; /* 상단과의 여백 */
-    position: absolute; /* 카드의 하단에 고정 */
-    bottom: 15px; /* 카드의 하단에서 떨어진 거리 */
-    left: 25px;
-    right: 25px;
 }
 
-.recipient-info {
-    display: flex;
-    align-items: center;
-}
-
-.recipient-info img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.recipient-role {
-    margin-right: 5px;
-    font-size: 0.9rem;
+.review-author {
     font-weight: bold;
-    color: #555;
-}
-
-.recipient-id {
-    font-size: 0.9rem;
-    font-weight : bold;
-    color: var(--hilight-color);
 }
 
 .review-date {
     font-style: italic;
     color: #999;
-    text-align: right;
 }
-
-
-
